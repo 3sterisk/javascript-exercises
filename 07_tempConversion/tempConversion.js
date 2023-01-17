@@ -1,11 +1,21 @@
-const convertToCelsius = function() {
+const convertToCelsius = function (farhrenheitTemp) {
+  let celcius = ((farhrenheitTemp - 32) * 5) / 9;
+  if (Number.isInteger(celcius)) {
+    return celcius;
+  }
+  return +celcius.toFixed(1);
 };
 
-const convertToFahrenheit = function() {
+const convertToFahrenheit = function (celsiusTemp) {
+  let fahrenheit = celsiusTemp * (9 / 5) + 32;
+  if (Number.isInteger(fahrenheit)) {
+    return fahrenheit;
+  }
+  return +fahrenheit.toFixed(1);
 };
 
 // Do not edit below this line
 module.exports = {
   convertToCelsius,
-  convertToFahrenheit
+  convertToFahrenheit,
 };
